@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+        
+.dark{
+    background-color: #444;
+    color: #FFF;
+}
+
+.light{
+    background-color: #FFF;
+    color: black;
+}
+
+.licorn{
+    background-image:url("licorne.png");
+    background-repeat:no-repeat;
+    color: #FFF
+}
+
+.egg{
+    background-image: url("egg.png");
+    color: white;
+    background-repeat: no-repeat;
+}
+</style>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <button name="DarkMode" type="button" onclick="setBackgroundDark()">
+        Dark Mode
+      </button>
+      <button name="LightMode" type="button" onclick="setBackgroundLight()">
+        Light Mode
+      </button>
+      <button name="LicornMode" type="button" onclick="setBackgroundLicorn()">
+        Licorn Mode
+      </button>
+      <button name="EggMode" type="button" onclick="setBackgroundEgg()">
+        Egg Mode
+      </button>
+    <table>
+        <caption>Eggboard   </caption>
+     
+        <tr>
+            <th>Personne</th>
+            <th>Pris ?</th>
+        </tr>
+        <tr>
+            <td>Marc</td>
+            <td><input type="number" name="pris" min="0" max="12" id="pris" onchange="changeValeur()"/></td>
+            <td><img src="egg.jpg"></td>
+        </tr>
+        <tr>
+            <td>Rémi</td>
+            <td><input type="number" name="pris" min="0" max="12" onchange="changeValeur()"/></td>
+            <td><img src="egg.jpg"></td>
+        </tr>
+        <tr>
+            <td>Marc</td>
+            <td><input type="number" name="pris" min="0" max="12" onchange="changeValeur()"/></td>
+            <td><img src="egg.jpg"></td>
+        </tr>
+        <tr>
+            <td>Gweltaz</td>
+            <td><input type="number" name="pris" min="0" max="12" onchange="changeValeur()"/></td>
+            <td><img src="egg.jpg"></td>
+        </tr>
+        <tr>
+            <td>Vincent</td>
+            <td><input type="number" name="pris" min="0" max="12" onchange="changeValeur()"/></td>
+            <td><img src="egg.jpg"></td>
+        </tr>
+        <tr>
+            <td>Simon</td>
+            <td><input type="number" name="pris" min="0" max="12" onchange="changeValeur()"/></td>
+            <td><img src="egg.jpg"></td>
+        </tr>
+        <tr>
+            <td>Jonathan</td>
+            <td><input type="number" name="pris" min="0" max="12" onchange="changeValeur()"/></td>
+            <td><img src="egg.jpg"></td>
+        </tr>
+        <tr>
+            <td>Morgane</td>
+            <td><input type="number" name="pris" min="0" max="12" onchange="changeValeur()"/></td>
+            <td><img src="egg.jpg"></td>
+        </tr>
+        <tr>
+            <td>Nicolas</td>
+            <td><input type="number" name="pris" min="0" max="12" onchange="changeValeur()"/></td>
+            <td><img src="egg.jpg"></td>
+        </tr>
+        <tr>
+            <td>Mathieu</td>
+            <td><input type="number" name="pris" min="0" max="12" onchange="changeValeur()"/></td>
+            <td><img src="egg.jpg"></td>
+        </tr>
+        <tr>
+            <td>Mehidine</td>
+            <td><input type="number" name="pris" min="0" max="12" onchange="changeValeur()"/></td>
+            <td><img src="egg.jpg"></td>
+        </tr>
+        <tr>
+            <td>Kevin</td>
+            <td><input type="number" name="pris" min="0" max="12" onchange="changeValeur()"/></td>
+            <td><img src="egg.jpg"></td>
+        </tr>
+        <tr>
+            <td>Lucas</td>
+            <td><input type="number" name="pris" min="0" max="12" onchange="changeValeur()"/></td>
+            <td><img src="egg.jpg"></td>
+        </tr>  
+        <tr>
+            <td>Yann (Esclave 😊😁👍)</td>
+            <td><input type="number" name="pris" min="0" max="12" onchange="changeValeur()"/></td>
+            <td><img src="egg.jpg"></td>
+        </tr> 
+    </table>
+     <script>
+        var oeuf = localStorage.getItem("nombreOeuf").split(",") || [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+       
+        var champs = document.getElementsByName("pris");
+        for (var i = 0; i<champs.length;i++){
+            champs[i].value =  oeuf[i] ;
+        }
+
+        var classCss = localStorage.getItem("classCss") || "light";
+        var elem = document.querySelector("body");
+        elem.className = classCss;
+
+        // var oeuf = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+function setBackgroundDark()
+{
+    var elem = document.querySelector("body");
+    elem.className = "dark";
+    localStorage.setItem("classCss", elem.className);
+}
+
+function setBackgroundLicorn()
+{
+    var elem = document.querySelector("body");
+    elem.className = "licorn";
+    localStorage.setItem("classCss", elem.className);
+}
+
+function setBackgroundLight()
+{
+    var elem = document.querySelector("body");
+    elem.className = "light";
+    localStorage.setItem("classCss", elem.className);
+}
+
+function setBackgroundEgg()
+{
+    var elem = document.querySelector("body");
+    elem.className = "egg";
+    localStorage.setItem("classCss", elem.className);
+}
+
+function changeValeur()
+{
+    var champs = document.getElementsByName("pris");
+    for (var i = 0; i<champs.length;i++){
+        oeuf[i] = champs[i].value;
+    }
+    localStorage.setItem("nombreOeuf", oeuf);
+}
+
+
+
+     </script>
+</body>
+</html>
