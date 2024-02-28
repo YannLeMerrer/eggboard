@@ -1,4 +1,4 @@
-# eggboard
+# Eggboard
 
 J'ai réalisé ce projet dans le cadre de mon stage de troisième sous la direction de l'entreprise Wijin, le but étant de créer un tableau afin de documenter le nombre d'oeufs récupérés par les salariés de l'entreprise, basée à Cesson Sévignée.
 
